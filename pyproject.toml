@@ -12,12 +12,9 @@ authors = [{ "name" = "furechan", "email" = "furechan@xsmail.com" }]
 urls = { "homepage" = "https://github.com/furechan/nbfixme" }
 readme = "README.md"
 license = { text = "MIT" }
+classifiers = ["Programming Language :: Python :: 3"]
 dependencies = ["click"]
 optional-dependencies.dev = ["ipykernel"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License"
-]
 
 [project.scripts]
 nbfixme = "nbfixme:main"
