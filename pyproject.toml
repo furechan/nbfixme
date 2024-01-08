@@ -1,28 +1,32 @@
 [build-system]
-requires = ["hatchling", ]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
 name = "nbfixme"
 version = "0.0.1"
+readme = "README.md"
 requires-python = ">=3.8"
+license = { text = "MIT License" }
 description = "Utility to fix basic notebook validation errors"
 keywords = ["jupyter", "notebook", "nbformat", "validation", "utility"]
 authors = [{ "name" = "furechan", "email" = "furechan@xsmail.com" }]
 urls = { "homepage" = "https://github.com/furechan/nbfixme" }
-readme = "README.md"
-license = { text = "MIT" }
-classifiers = ["Programming Language :: Python :: 3"]
 dependencies = ["click"]
 optional-dependencies.dev = ["ipykernel"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.scripts]
 nbfixme = "nbfixme:main"
 
 [tool.hatch.build]
+targets.wheel.sources = ["src"]
 dev-mode-dirs = ["src"]
-sources = ["src"]
-include = ["src"]
+only-include = ["src"]
 exclude = [".*"]
 
 [tool.pydev]
@@ -30,5 +34,5 @@ allow-publish = true
 
 [tool.pytest.ini_options]
 addopts = ["-p no:cacheprovider"]
-testpaths = ["tests", ]
+testpaths = ["tests"]
 
